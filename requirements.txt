@@ -1,4 +1,0 @@
-numpy
-plotly
-pandas
-ipywidgets

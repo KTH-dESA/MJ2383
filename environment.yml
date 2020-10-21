@@ -1,0 +1,12 @@
+name: osemosys
+channels:
+  - conda-forge
+dependencies:
+  - python
+  - numpy
+  - pip
+  - plotly
+  - pandas
+  - ipywidgets
+  - glpk
+
