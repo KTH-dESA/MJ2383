@@ -12,5 +12,5 @@ dependencies:
   - matplotlib
   - tqdm
   - pip:
-    - otoole
+    - otoole==0.9.0b1
 
