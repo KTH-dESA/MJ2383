@@ -279,7 +279,8 @@ s.t. EBa7_EnergyBalanceEachTS1{r in REGION, l in TIMESLICE, f in FUEL, y in YEAR
 s.t. EBa8_EnergyBalanceEachTS2{r in REGION, l in TIMESLICE, f in FUEL, y in YEAR}: RateOfUse[r,l,f,y]*YearSplit[l,y] = Use[r,l,f,y];
 s.t. EBa9_EnergyBalanceEachTS3{r in REGION, l in TIMESLICE, f in FUEL, y in YEAR}: RateOfDemand[r,l,f,y]*YearSplit[l,y] = Demand[r,l,f,y];
 s.t. EBa10_EnergyBalanceEachTS4{r in REGION, rr in REGION, l in TIMESLICE, f in FUEL, y in YEAR}: Trade[r,rr,l,f,y] = -Trade[rr,r,l,f,y];
-s.t. EBa11_EnergyBalanceEachTS5{r in REGION, l in TIMESLICE, f in FUEL, y in YEAR}: Production[r,l,f,y] >= Demand[r,l,f,y] + Use[r,l,f,y] + sum{rr in REGION} Trade[r,rr,l,f,y]*TradeRoute[r,rr,f,y];
+s.t. EBa11_EnergyBalanceEachTS5{r in REGION, l in TIMESLICE, f in FUEL, y in YEAR}: 
+	Production[r,l,f,y] >= Demand[r,l,f,y] + Use[r,l,f,y] + sum{rr in REGION} Trade[r,rr,l,f,y]*TradeRoute[r,rr,f,y];
 #
 #########        	Energy Balance B		 	#############
 #
@@ -957,5 +958,29 @@ table UseByTechnologyResults
 	OUT "CSV"
 	ResultsPath & "/UseByTechnology.csv" :
 	r~REGION, l~TIMESLICE, t~TECHNOLOGY, f~FUEL, y~YEAR, UseByTechnology[r, l, t, f, y]~VALUE;
+
+table ProductionDual
+    {r in REGION, l in TIMESLICE, f in FUEL, y in YEAR:
+    EBa11_EnergyBalanceEachTS5[r,l,f,y].dual <> 0}
+    OUT "CSV"
+    ResultsPath & "/ProductionDual.csv" :
+    r~REGION, l~TIMESLICE, f~FUEL, y~YEAR,
+    EBa11_EnergyBalanceEachTS5[r,l,f,y].dual~DUAL,
+    EBa11_EnergyBalanceEachTS5[r,l,f,y].lb~LB,
+    EBa11_EnergyBalanceEachTS5[r,l,f,y].ub~UP,
+    EBa11_EnergyBalanceEachTS5[r,l,f,y].val~VALUE,
+    EBa11_EnergyBalanceEachTS5[r,l,f,y].status~STATUS;
+
+table ProductionDualAnnual
+    {r in REGION, f in FUEL, y in YEAR:
+    EBb4_EnergyBalanceEachYear4[r,f,y].dual <> 0}
+    OUT "CSV"
+    ResultsPath & "/ProductionDualAnnual.csv" :
+    r~REGION, f~FUEL, y~YEAR,
+    EBb4_EnergyBalanceEachYear4[r,f,y].dual~DUAL,
+    EBb4_EnergyBalanceEachYear4[r,f,y].lb~LB,
+    EBb4_EnergyBalanceEachYear4[r,f,y].ub~UP,
+    EBb4_EnergyBalanceEachYear4[r,f,y].val~VALUE,
+    EBb4_EnergyBalanceEachYear4[r,f,y].status~STATUS;
 
 end;

@@ -9,6 +9,8 @@ dependencies:
   - pandas
   - ipywidgets
   - glpk
+  - matplotlib
+  - tqdm
   - pip:
     - otoole
 

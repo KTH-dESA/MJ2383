@@ -4,20 +4,23 @@ Results visualisation for the SimpleEnergyModel - MJ2383
 #%%
 import pandas as pd
 import numpy as np
-import matplotlib.pyplot as plt
+from matplotlib import pyplot as plt
+import os
 
 #%%
 # import sys
 # def main(filepath1, filepath2):
 #%%
-Demand = pd.read_csv('SimpleEnergyModel_Gas/data/SpecifiedAnnualDemand.csv')
+path = os.path.join('SimpleEnergyModel', 'SimpleEnergyModel_Gas', 'data', 'SpecifiedAnnualDemand.csv')
+Demand = pd.read_csv(path)
 ## Demand
 D = Demand.loc[Demand.FUEL == 'FEL']
 Years = Demand.YEAR.unique() 
 
 #%%
 # SimpleEnergyModel_Gas
-Production = pd.read_csv('SimpleEnergyModel_Gas/results/ProductionByTechnologyAnnual.csv')
+path = os.path.join('SimpleEnergyModel', 'SimpleEnergyModel_Gas', 'results', 'ProductionByTechnologyAnnual.csv')
+Production = pd.read_csv(path)
 
 ## Production By Technology Annual
 ProductionData = {}
@@ -57,7 +60,9 @@ WIND = pd.DataFrame()
 
 #%%
 # SimpleEnergyModel_GasSolar
-Production = pd.read_csv('SimpleEnergyModel_GasSolar/results/ProductionByTechnologyAnnual.csv')
+
+path = os.path.join('SimpleEnergyModel', 'SimpleEnergyModel_Gas', 'results', 'ProductionByTechnologyAnnual.csv')
+Production = pd.read_csv(path)
 
 ## Production By Technology Annual
 ProductionData = {}
@@ -87,7 +92,7 @@ plt.plot(D.YEAR, D.VALUE)
 plt.xlabel('Years')
 plt.ylabel('Demand')
 
-fig2 = plt.stackplot(Years, NGCC.VALUE, SOLPV.VALUE, B.VALUE, labels=['NGCC', 'SOLPV', 'Backstop'])
+fig2 = plt.stackplot(Years, NGCC['VALUE'], SOLPV['VALUE'], B['VALUE'], labels=['NGCC', 'SOLPV', 'Backstop'])
 plt.legend(loc='upper left')
 
 NGCC = pd.DataFrame()
@@ -97,7 +102,8 @@ WIND = pd.DataFrame()
 
 #%%
 # SimpleEnergyModel_GasSolarWind
-Production = pd.read_csv('SimpleEnergyModel_GasSolarWind/results/ProductionByTechnologyAnnual.csv')
+path = os.path.join('SimpleEnergyModel', 'SimpleEnergyModel_GasSolarWind', 'results', 'ProductionByTechnologyAnnual.csv')
+Production = pd.read_csv(path)
 
 ## Production By Technology Annual
 ProductionData = {}
