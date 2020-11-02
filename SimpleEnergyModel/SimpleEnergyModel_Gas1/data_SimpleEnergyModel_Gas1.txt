@@ -1,0 +1,241 @@
+###############
+#    Sets     #
+###############
+#
+set DAYTYPE :=  ;
+set DAILYTIMEBRACKET :=  ;
+set EMISSION := CO2 ;
+set FUEL := FEL GAS SEC_EL ;
+set REGION := SIMPLICITY ;
+set SEASON :=  ;
+set STORAGE :=  ;
+set MODE_OF_OPERATION := 1 2 ;
+set TIMESLICE := ID IN SD SN WD WN ;
+set TECHNOLOGY := Backstop GasExtraction NGCC1 TD ;
+set YEAR := 2015 ;
+
+
+#####################
+#    Parameters     #
+#####################
+#
+param AccumulatedAnnualDemand default 0 :=
+;
+
+param AnnualEmissionLimit default 99999 :=
+;
+
+param AnnualExogenousEmission default 0 :=
+;
+
+param AvailabilityFactor default 1 :=
+;
+
+param CapacityFactor default 1 :=
+;
+
+param CapacityOfOneTechnologyUnit default 0 :=
+;
+
+param CapacityToActivityUnit default 1 :
+Backstop GasExtraction NGCC1 TD:=
+SIMPLICITY 31.536 1 31.536 31.536
+;
+
+param CapitalCost default 0.0001 :=
+[SIMPLICITY,*,*]:
+2015 :=
+Backstop 999999
+NGCC1 1100
+;
+
+param CapitalCostStorage default 0 :=
+;
+
+param Conversionld default 0 :=
+;
+
+param Conversionlh default 0 :=
+;
+
+param Conversionls default 0 :=
+;
+
+param DaySplit default 0.00137 :=
+;
+
+param DaysInDayType default 7 :=
+;
+
+param DepreciationMethod default 1 :=
+;
+
+param DiscountRate default 0.05 :=
+;
+
+param EmissionActivityRatio default 0 :=
+[SIMPLICITY,GasExtraction,CO2,*,*]:
+2015 :=
+1 0.05  
+;
+
+param EmissionsPenalty default 0 :=
+;
+
+param FixedCost default 0 :=
+[SIMPLICITY,*,*]:
+2015 :=
+NGCC1 44 
+TD 0.96 
+;
+
+param InputActivityRatio default 0 :=
+[SIMPLICITY,NGCC1,GAS,*,*]:
+2015 :=
+1 1.992 
+[SIMPLICITY,TD,SEC_EL,*,*]:
+2015 :=
+1 1 
+;
+
+param MinStorageCharge default 0 :=
+;
+
+param ModelPeriodEmissionLimit default 999999 :=
+;
+
+param ModelPeriodExogenousEmission default 0 :=
+;
+
+param OperationalLife default 1 :
+Backstop GasExtraction NGCC1 TD :=
+SIMPLICITY 1 1 30 50
+;
+
+param OperationalLifeStorage default 99 :=
+;
+
+param OutputActivityRatio default 0 :=
+[SIMPLICITY,Backstop,FEL,*,*]:
+2015 :=
+1 1 
+[SIMPLICITY,GasExtraction,GAS,*,*]:
+2015 :=
+1 1 
+[SIMPLICITY,NGCC1,SEC_EL,*,*]:
+2015 :=
+1 1 
+[SIMPLICITY,TD,FEL,*,*]:
+2015 :=
+1 0.95
+;
+
+param REMinProductionTarget default 0 :=
+;
+
+param RETagFuel default 0 :=
+;
+
+param RETagTechnology default 0 :=
+;
+
+param ReserveMargin default 0 :=
+;
+
+param ReserveMarginTagFuel default 0 :=
+;
+
+param ReserveMarginTagTechnology default 0 :=
+;
+
+param ResidualCapacity default 0 :=
+;
+
+param ResidualStorageCapacity default 0 :=
+;
+
+param SpecifiedAnnualDemand default 0 :=
+[SIMPLICITY,*,*]:
+2015 :=
+FEL 2.214
+;
+
+param SpecifiedDemandProfile default 0 :=
+[SIMPLICITY,FEL,*,*]:
+2015 :=
+ID 0.12 
+IN 0.08 
+SD 0.15 
+SN 0.05 
+WD 0.4 
+WN 0.2 
+;
+
+param StorageLevelStart default 0 :=
+;
+
+param StorageMaxChargeRate default 0 :=
+;
+
+param StorageMaxDischargeRate default 0 :=
+;
+
+param TechnologyFromStorage default 0 :=
+;
+
+param TechnologyToStorage default 0 :=
+;
+
+param TotalAnnualMaxCapacity default 99999 :=
+[SIMPLICITY,*,*]:
+2015 :=
+GasExtraction 4 
+;
+
+param TotalAnnualMaxCapacityInvestment default 99999 :=
+;
+
+param TotalAnnualMinCapacity default 0 :=
+;
+
+param TotalAnnualMinCapacityInvestment default 0 :=
+;
+
+param TotalTechnologyAnnualActivityLowerLimit default 0 :=
+;
+
+param TotalTechnologyAnnualActivityUpperLimit default 99999 :=
+;
+
+param TotalTechnologyModelPeriodActivityLowerLimit default 0 :=
+;
+
+param TotalTechnologyModelPeriodActivityUpperLimit default 99999 :
+Backstop GasExtraction NGCC1 TD :=
+SIMPLICITY 99999 125 99999 99999 
+;
+
+param TradeRoute default 0 :=
+;
+
+param VariableCost default 0.0001 :=
+[SIMPLICITY,Backstop,*,*]:
+2015 :=
+1 999999 
+[SIMPLICITY,GasExtraction,*,*]:
+2015 :=
+1 7.5 
+;
+
+param YearSplit default 0 :
+2015 :=
+ID 0.1667 
+IN 0.0833 
+SD 0.1667 
+SN 0.0833 
+WD 0.3333 
+WN 0.1667 
+;
+
+#
+end;
