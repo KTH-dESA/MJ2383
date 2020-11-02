@@ -12,9 +12,7 @@ import matplotlib.pyplot as plt
 #%%
 Demand = pd.read_csv('SimpleEnergyModel_Gas/data/SpecifiedAnnualDemand.csv')
 ## Demand
-D1 = Demand.loc[Demand.FUEL == 'FEL1']
-D2 = Demand.loc[Demand.FUEL == 'FEL2']
-
+D = Demand.loc[Demand.FUEL == 'FEL']
 Years = Demand.YEAR.unique() 
 
 #%%
@@ -34,6 +32,29 @@ for i in Production.TECHNOLOGY.unique():
         data.loc[data.VALUE == 0, 'TECHNOLOGY'] = Technology[0]
         data.loc[data.VALUE == 0, 'FUEL'] = Fuel[0]
     ProductionData[i] = data
+
+for x in ProductionData:
+    if x == 'NGCC':
+        NGCC = ProductionData[x]
+    if x == 'Backstop':
+        B = ProductionData[x]
+    if x == 'SOLPV':
+        SOLPV = ProductionData[x]
+    if x == 'WIND':
+        WIND = ProductionData[x]
+
+plt.plot(D.YEAR, D.VALUE)
+plt.xlabel('Years')
+plt.ylabel('Demand')
+
+fig1 = plt.stackplot(Years, NGCC.VALUE, B.VALUE, labels=['NGCC', 'Backstop'])
+plt.legend(loc='upper left')
+
+NGCC = pd.DataFrame()
+B = pd.DataFrame()
+SOLPV = pd.DataFrame()
+WIND = pd.DataFrame()
+
 #%%
 # SimpleEnergyModel_GasSolar
 Production = pd.read_csv('SimpleEnergyModel_GasSolar/results/ProductionByTechnologyAnnual.csv')
@@ -51,6 +72,29 @@ for i in Production.TECHNOLOGY.unique():
         data.loc[data.VALUE == 0, 'TECHNOLOGY'] = Technology[0]
         data.loc[data.VALUE == 0, 'FUEL'] = Fuel[0]
     ProductionData[i] = data
+
+for x in ProductionData:
+    if x == 'NGCC':
+        NGCC = ProductionData[x]
+    if x == 'Backstop':
+        B = ProductionData[x]
+    if x == 'SOLPV':
+        SOLPV = ProductionData[x]
+    if x == 'WIND':
+        WIND = ProductionData[x]
+
+plt.plot(D.YEAR, D.VALUE)
+plt.xlabel('Years')
+plt.ylabel('Demand')
+
+fig2 = plt.stackplot(Years, NGCC.VALUE, SOLPV.VALUE, B.VALUE, labels=['NGCC', 'SOLPV', 'Backstop'])
+plt.legend(loc='upper left')
+
+NGCC = pd.DataFrame()
+B = pd.DataFrame()
+SOLPV = pd.DataFrame()
+WIND = pd.DataFrame()
+
 #%%
 # SimpleEnergyModel_GasSolarWind
 Production = pd.read_csv('SimpleEnergyModel_GasSolarWind/results/ProductionByTechnologyAnnual.csv')
@@ -68,26 +112,49 @@ for i in Production.TECHNOLOGY.unique():
         data.loc[data.VALUE == 0, 'TECHNOLOGY'] = Technology[0]
         data.loc[data.VALUE == 0, 'FUEL'] = Fuel[0]
     ProductionData[i] = data
-#%% Plots
 
 for x in ProductionData:
     if x == 'NGCC':
         NGCC = ProductionData[x]
-    if x == 'Backstop1':
-        B1 = ProductionData[x]
-    if x == 'Backstop2':
-        B2 = ProductionData[x]
+    if x == 'Backstop':
+        B = ProductionData[x]
     if x == 'SOLPV':
         SOLPV = ProductionData[x]
     if x == 'WIND':
         WIND = ProductionData[x]
 
-plt.plot(D1.YEAR, D1.VALUE)
-plt.plot(D2.YEAR, D2.VALUE)
+plt.plot(D.YEAR, D.VALUE)
 plt.xlabel('Years')
 plt.ylabel('Demand')
 
-plt.stackplot(Years, NGCC.VALUE, SOLPV.VALUE, WIND.VALUE, labels=['NGCC', 'SOLPV', 'WIND'])
+fig3 = plt.stackplot(Years, NGCC.VALUE, WIND.VALUE, labels=['NGCC', 'WIND'])
+plt.legend(loc='upper left')
+
+NGCC = pd.DataFrame()
+B = pd.DataFrame()
+SOLPV = pd.DataFrame()
+WIND = pd.DataFrame()
+
+#%% Plots
+
+for x in ProductionData:
+    if x == 'NGCC':
+        NGCC = ProductionData[x]
+    if x == 'Backstop':
+        B = ProductionData[x]
+    if x == 'SOLPV':
+        SOLPV = ProductionData[x]
+    if x == 'WIND':
+        WIND = ProductionData[x]
+
+plt.plot(D.YEAR, D.VALUE)
+plt.xlabel('Years')
+plt.ylabel('Demand')
+
+a = plt.stackplot(Years, NGCC.VALUE, B.VALUE, labels=['NGCC', 'Backstop'])
+b = plt.stackplot(Years, NGCC.VALUE, SOLPV.VALUE, B.VALUE, labels=['NGCC', 'SOLPV', 'Backstop'])
+c = plt.stackplot(Years, NGCC.VALUE, SOLPV.VALUE, WIND.VALUE, B.VALUE, labels=['NGCC', 'SOLPV', 'WIND', 'Backstop'])
+
 plt.legend(loc='upper left')
 #%%
 # if __name__ == "__main__":
