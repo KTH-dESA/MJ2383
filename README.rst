@@ -9,4 +9,4 @@ Lab 1:
 Lab 3:
 
 .. image:: https://mybinder.org/badge_logo.svg
- :target: https://mybinder.org/v2/gh/KTH-dESA/MJ2383/4c21952f27ac1797bcff217245b31806d15f402e?filepath=mj2383_lab3.ipynb
+ :target: https://mybinder.org/v2/gh/KTH-dESA/MJ2383/lab3_will?filepath=mj2383_lab3.ipynb
