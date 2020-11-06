@@ -110,7 +110,7 @@ param FixedCost default 0 :=
 [SIMPLICITY,*,*]:
 2015 :=
 NGCC1 44
-NGCC1 40 
+NGCC2 40 
 TD 0.96 
 ;
 

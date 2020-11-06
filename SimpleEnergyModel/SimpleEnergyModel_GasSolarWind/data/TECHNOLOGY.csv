@@ -1,8 +1,10 @@
 VALUE
 Backstop
 GasExtraction
-GasImport
-NGCC
+GasImport1
+GasImport2
+NGCC1
+NGCC2
 SOLPV
 WIND
 TD
