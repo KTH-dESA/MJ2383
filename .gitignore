@@ -1,5 +1,9 @@
 # OSeMOSYS files
 results/*
+temp.txt
+
+# Development
+.vscode
 
 # Byte-compiled / optimized / DLL files
 __pycache__/
