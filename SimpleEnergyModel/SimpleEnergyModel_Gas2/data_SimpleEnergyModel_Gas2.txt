@@ -1,3 +1,5 @@
+# lowering TotalAnnualMaxCapacity for GasExtraction, from 6 to 3
+# adding GasImport1 and GasImport2
 ###############
 #    Sets     #
 ###############
@@ -201,7 +203,7 @@ param TechnologyToStorage default 0 :=
 param TotalAnnualMaxCapacity default 99999 :=
 [SIMPLICITY,*,*]:
 2015 :=
-GasExtraction 6 
+GasExtraction 3
 ;
 
 param TotalAnnualMaxCapacityInvestment default 99999 :=
@@ -239,10 +241,10 @@ param VariableCost default 0.0001 :=
 1 8 
 [SIMPLICITY,GasImport1,*,*]:
 2015 :=
-1 12
+1 10
 [SIMPLICITY,GasImport2,*,*]:
 2015 :=
-1 15
+1 11
 ;
 
 param YearSplit default 0 :

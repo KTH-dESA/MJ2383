@@ -55,7 +55,7 @@ param CapitalCost default 0.0001 :=
 2015 :=
 Backstop 999999 
 NGCC1 1100 
-NGCC2 1000
+NGCC2 1250
 SOLPV 1700 
 ;
 
@@ -102,7 +102,7 @@ param FixedCost default 0 :=
 [SIMPLICITY,*,*]:
 2015 :=
 NGCC1 44
-NGCC2 40 
+NGCC2 44 
 TD 0.96
 ;
 
@@ -112,7 +112,7 @@ param InputActivityRatio default 0 :=
 1 1.992 
 [SIMPLICITY,NGCC2,GAS,*,*]:
 2015 :=
-1 1.692
+1 1.492
 [SIMPLICITY,TD,SEC_EL,*,*]:
 2015 :=
 1 1 
@@ -221,7 +221,7 @@ param TechnologyToStorage default 0 :=
 param TotalAnnualMaxCapacity default 99999 :=
 [SIMPLICITY,*,*]:
 2015 :=
-GasExtraction 6 
+GasExtraction 3 
 ;
 
 param TotalAnnualMaxCapacityInvestment default 99999 :=
@@ -259,10 +259,10 @@ param VariableCost default 0.0001 :=
 1 8
 [SIMPLICITY,GasImport1,*,*]:
 2015 :=
-1 12
+1 10
 [SIMPLICITY,GasImport2,*,*]:
 2015 :=
-1 15
+1 11
 [SIMPLICITY,SOLPV,*,*]:
 2015 :=
 1 2.5 

@@ -55,7 +55,7 @@ plt.plot(DemandProfile.TIMESLICE, DemandProfile.VALUE)
 plt.xlabel('Timeslices')
 plt.ylabel('Demand')
 
-fig1 = plt.stackplot(TimeSlices, NGCC1.VALUE, B.VALUE, labels=['NGCC1', 'Backstop'])
+fig1 = plt.stackplot(TimeSlices, NGCC1.VALUE, labels=['NGCC1'])
 plt.legend(loc='upper left')
 
 #%%
@@ -99,7 +99,7 @@ plt.ylabel('Demand')
 fig1 = plt.stackplot(TimeSlices, NGCC1.VALUE, labels=['NGCC1'])
 fig1 = plt.legend(loc='upper left')
 
-fig2 = plt.stackplot(TimeSlices, GasImp2.VALUE, labels=['GasImport2'])
+fig2 = plt.stackplot(TimeSlices, GasEx.VALUE, GasImp1.VALUE, labels=['GasExtraction', 'GasImport1'])
 fig2 = plt.legend(loc='upper left')
 
 #%%
@@ -145,8 +145,8 @@ plt.ylabel('Demand')
 fig1 = plt.stackplot(TimeSlices, NGCC2.VALUE, labels=['NGCC2'])
 fig1 = plt.legend(loc='upper left')
 
-#fig2 = plt.stackplot(TimeSlices, GasImp2.VALUE, labels=['GasImport2'])
-#fig2 = plt.legend(loc='upper left')
+fig2 = plt.stackplot(TimeSlices, GasEx.VALUE, GasImp1.VALUE, labels=['GasExtraction', 'GasImport1'])
+fig2 = plt.legend(loc='upper left')
 
 #%%
 # SimpleEnergyModel_GasSolar
@@ -202,8 +202,16 @@ for i in Production.TECHNOLOGY.unique():
     ProductionData[i] = data
 
 for x in ProductionData:
-    if x == 'NGCC':
-        NGCC = ProductionData[x]
+    if x == 'GasExtraction':
+        GasEx = ProductionData[x]
+    if x == 'GasImport1':
+        GasImp1 = ProductionData[x]
+    if x == 'GasImport2':
+        GasImp2 = ProductionData[x]
+    if x == 'NGCC1':
+        NGCC1 = ProductionData[x]
+    if x == 'NGCC2':
+        NGCC2 = ProductionData[x]
     if x == 'Backstop':
         B = ProductionData[x]
     if x == 'SOLPV':
@@ -215,8 +223,10 @@ plt.plot(DemandProfile.TIMESLICE, DemandProfile.VALUE)
 plt.xlabel('Timeslices')
 plt.ylabel('Demand')
 
-fig3 = plt.stackplot(TimeSlices, NGCC.VALUE, WIND.VALUE, labels=['NGCC', 'WIND'])
-plt.legend(loc='upper left')
+fig3 = plt.stackplot(TimeSlices, NGCC2.VALUE, labels=['NGCC2'])
+fig3 = plt.legend(loc='upper left')
+fig4 = plt.stackplot(TimeSlices, GasEx.VALUE, GasImp1.VALUE, labels=['GasExtraction', 'GasImport1'])
+fig4 = plt.legend(loc='upper left')
 
 NGCC = pd.DataFrame()
 B = pd.DataFrame()

@@ -1,3 +1,4 @@
+# adding SOLPV and WIND with CapacityFactor and ReserveMargin
 ###############
 #    Sets     #
 ###############
@@ -63,9 +64,9 @@ param CapitalCost default 0.0001 :=
 2015 :=
 Backstop 999999 
 NGCC1 1100 
-NGCC2 1000 
-SOLPV 1700 
-WIND 1845 
+NGCC2 1250 
+SOLPV 1500 
+WIND 1550 
 ;
 param CapitalCostStorage default 0 :=
 ;
@@ -110,7 +111,7 @@ param FixedCost default 0 :=
 [SIMPLICITY,*,*]:
 2015 :=
 NGCC1 44
-NGCC2 40 
+NGCC2 44 
 TD 0.96 
 ;
 
@@ -120,7 +121,7 @@ param InputActivityRatio default 0 :=
 1 1.992
 [SIMPLICITY,NGCC2,GAS,*,*]:
 2015 :=
-1 1.692 
+1 1.492 
 [SIMPLICITY,TD,SEC_EL,*,*]:
 2015 :=
 1 1 
@@ -182,13 +183,23 @@ param RETagFuel default 0 :=
 param RETagTechnology default 0 :=
 ;
 
-param ReserveMargin default 0 :=
+param ReserveMargin default 0 :
+2015 := 
+SIMPLICITY 1.2 
 ;
 
-param ReserveMarginTagFuel default 0 :=
+param ReserveMarginTagFuel default 0:=
+[SIMPLICITY,*,*]:
+2015 :=
+SEC_EL 1
 ;
 
 param ReserveMarginTagTechnology default 0 :=
+[SIMPLICITY,*,*]:
+2015 :=
+NGCC1 1
+NGCC2 1
+WIND 0.05
 ;
 
 param ResidualCapacity default 0 :=
@@ -232,7 +243,9 @@ param TechnologyToStorage default 0 :=
 param TotalAnnualMaxCapacity default 99999 :=
 [SIMPLICITY,*,*]:
 2015 :=
-GasExtraction 6 
+GasExtraction 3 
+NGCC1 1
+NGCC2 1
 ;
 
 param TotalAnnualMaxCapacityInvestment default 99999 :=
@@ -270,10 +283,10 @@ param VariableCost default 0.0001 :=
 1 8
 [SIMPLICITY,GasImport1,*,*]:
 2015 :=
-1 12
+1 10
 [SIMPLICITY,GasImport2,*,*]:
 2015 :=
-1 15
+1 11
 [SIMPLICITY,SOLPV,*,*]:
 2015:=
 1 2.5 

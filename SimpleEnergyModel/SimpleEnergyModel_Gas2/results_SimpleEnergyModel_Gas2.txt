@@ -1,25 +1,31 @@
-Optimal - objective value 46.18071691
-      1 NewCapacity(SIMPLICITY,GasExtraction,2015)                                         5.5714472           1.3552527e-20
+Optimal - objective value 49.42107209
+      1 NewCapacity(SIMPLICITY,GasExtraction,2015)                                                 3           -2.220446e-16
+      2 NewCapacity(SIMPLICITY,GasImport1,2015)                                            2.5714472           1.3552527e-20
       4 NewCapacity(SIMPLICITY,NGCC1,2015)                                               0.088689475                       0
       5 NewCapacity(SIMPLICITY,TD,2015)                                                  0.088689475          -8.2182525e-17
-     18 RateOfActivity(SIMPLICITY,ID,GasExtraction,1,2015)                                 3.3418657          -2.6645353e-15
-     19 RateOfActivity(SIMPLICITY,IN,GasExtraction,1,2015)                                 4.4584955                       0
-     20 RateOfActivity(SIMPLICITY,SD,GasExtraction,1,2015)                                 4.1773321          -2.6645353e-15
+     18 RateOfActivity(SIMPLICITY,ID,GasExtraction,1,2015)                                         3           4.4408921e-16
+     19 RateOfActivity(SIMPLICITY,IN,GasExtraction,1,2015)                                         3                       0
+     20 RateOfActivity(SIMPLICITY,SD,GasExtraction,1,2015)                                         3           4.4408921e-16
      21 RateOfActivity(SIMPLICITY,SN,GasExtraction,1,2015)                                 2.7865597                       0
-     22 RateOfActivity(SIMPLICITY,WD,GasExtraction,1,2015)                                 5.5714472                       0
-     23 RateOfActivity(SIMPLICITY,WN,GasExtraction,1,2015)                                 5.5697762          -2.6645353e-15
+     22 RateOfActivity(SIMPLICITY,WD,GasExtraction,1,2015)                                         3                       0
+     23 RateOfActivity(SIMPLICITY,WN,GasExtraction,1,2015)                                         3           4.4408921e-16
+     30 RateOfActivity(SIMPLICITY,ID,GasImport1,1,2015)                                   0.34186569            2.220446e-16
+     31 RateOfActivity(SIMPLICITY,IN,GasImport1,1,2015)                                    1.4584955                       0
+     32 RateOfActivity(SIMPLICITY,SD,GasImport1,1,2015)                                    1.1773321            2.220446e-16
+     34 RateOfActivity(SIMPLICITY,WD,GasImport1,1,2015)                                    2.5714472                       0
+     35 RateOfActivity(SIMPLICITY,WN,GasImport1,1,2015)                                    2.5697762            2.220446e-16
      54 RateOfActivity(SIMPLICITY,ID,NGCC1,1,2015)                                         1.6776434                       0
      55 RateOfActivity(SIMPLICITY,IN,NGCC1,1,2015)                                         2.2382005                       0
      56 RateOfActivity(SIMPLICITY,SD,NGCC1,1,2015)                                         2.0970543                       0
      57 RateOfActivity(SIMPLICITY,SN,NGCC1,1,2015)                                         1.3988753                       0
-     58 RateOfActivity(SIMPLICITY,WD,NGCC1,1,2015)                                         2.7969113          -1.7763568e-15
+     58 RateOfActivity(SIMPLICITY,WD,NGCC1,1,2015)                                         2.7969113          -8.8817842e-16
      59 RateOfActivity(SIMPLICITY,WN,NGCC1,1,2015)                                         2.7960724                       0
-     66 RateOfActivity(SIMPLICITY,ID,TD,1,2015)                                            1.6776434           8.8817842e-16
-     67 RateOfActivity(SIMPLICITY,IN,TD,1,2015)                                            2.2382005          -4.4408921e-16
-     68 RateOfActivity(SIMPLICITY,SD,TD,1,2015)                                            2.0970543           8.8817842e-16
+     66 RateOfActivity(SIMPLICITY,ID,TD,1,2015)                                            1.6776434           1.7763568e-15
+     67 RateOfActivity(SIMPLICITY,IN,TD,1,2015)                                            2.2382005           -2.220446e-16
+     68 RateOfActivity(SIMPLICITY,SD,TD,1,2015)                                            2.0970543           1.7763568e-15
      69 RateOfActivity(SIMPLICITY,SN,TD,1,2015)                                            1.3988753          -4.4408921e-16
      70 RateOfActivity(SIMPLICITY,WD,TD,1,2015)                                            2.7969113                       0
-     71 RateOfActivity(SIMPLICITY,WN,TD,1,2015)                                            2.7960724           8.8817842e-16
+     71 RateOfActivity(SIMPLICITY,WN,TD,1,2015)                                            2.7960724           1.7763568e-15
      82 DiscountedSalvageValue(SIMPLICITY,NGCC1,2015)                                      91.514312                       0
      83 DiscountedSalvageValue(SIMPLICITY,TD,2015)                                     8.4062694e-06                       0
      90 SalvageValue(SIMPLICITY,NGCC1,2015)                                                96.090028                       0
