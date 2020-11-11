@@ -12,8 +12,8 @@ Lab 3:
  :target: https://mybinder.org/v2/gh/KTH-dESA/MJ2383/lab3_will?filepath=mj2383_lab3.ipynb
 
 
- Developing with Jupyter Notebooks
- ---------------------------------
+Developing with Jupyter Notebooks
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
  Before starting work on adding or editing content with the Jupyter Notebooks in this
  repository, please ensure you have set up your Python environment correctly.
