@@ -30,3 +30,21 @@ Lab 3:
     conda activate osemosys
     conda install nbstripout
     nbstripout --install
+
+Hints
+~~~~~
+
+Add a hyperlink to a file to edit by prepending `.../edit` to the relative path of the file.
+For example::
+
+    Edit this [CSV file](../edit/model/gas/data/CapitalCost.csv)
+
+Link to the view of a folder by prepending `../tree` to the relative path. For example::
+
+    View the results [here](../tree/results)
+
+When using `!` to run shell commands, you can include Python variables by prepending them with a `$`.
+For example::
+
+    my_python_variables = 'a_string'
+    !echo $my_python_variables | wc
