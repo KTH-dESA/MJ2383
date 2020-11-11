@@ -15,17 +15,17 @@ Lab 3:
 Developing with Jupyter Notebooks
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
- Before starting work on adding or editing content with the Jupyter Notebooks in this
- repository, please ensure you have set up your Python environment correctly.
+Before starting work on adding or editing content with the Jupyter Notebooks in this
+repository, please ensure you have set up your Python environment correctly.
 
- We recommend using miniconda to manage your Python environments.
+We recommend using miniconda to manage your Python environments.
 
- Install the dependencies using the enclosed environment file:
+Install the dependencies using the enclosed environment file:
 
-     conda env create -f environment.yml
+    conda env create -f environment.yml
 
- Also, installing nbstripout makes development easier, as it automatically removes the
- extraneous information from the Jupyter notebook when using version control with git.
+Also, installing nbstripout makes development easier, as it automatically removes the
+extraneous information from the Jupyter notebook when using version control with git.
 
     conda activate osemosys
     conda install nbstripout
