@@ -20,12 +20,12 @@ repository, please ensure you have set up your Python environment correctly.
 
 We recommend using miniconda to manage your Python environments.
 
-Install the dependencies using the enclosed environment file:
+Install the dependencies using the enclosed environment file::
 
     conda env create -f environment.yml
 
 Also, installing nbstripout makes development easier, as it automatically removes the
-extraneous information from the Jupyter notebook when using version control with git.
+extraneous information from the Jupyter notebook when using version control with git::
 
     conda activate osemosys
     conda install nbstripout
