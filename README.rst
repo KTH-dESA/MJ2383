@@ -9,8 +9,7 @@ Lab 1:
 Lab 3:
 
 .. image:: https://mybinder.org/badge_logo.svg
- :target: https://mybinder.org/v2/gh/KTH-dESA/MJ2383/tree/lab3_hauke/HEAD?filepath=mj2383_lab3.ipynb
-
+ :target: https://mybinder.org/v2/gh/KTH-dESA/MJ2383/lab3_hauke?filepath=mj2383_lab3.ipynb
 
 Developing with Jupyter Notebooks
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
