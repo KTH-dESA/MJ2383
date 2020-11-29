@@ -1,0 +1,4 @@
+jupyter contrib nbextension install --user
+jupyter nbextension enable exercise
+jupyter nbextension enable Exercise2
+jupyter nbextension enable rubberband

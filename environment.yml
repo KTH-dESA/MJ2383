@@ -1,0 +1,17 @@
+name: osemosys
+channels:
+  - conda-forge
+dependencies:
+  - python
+  - numpy
+  - pip
+  - plotly
+  - pandas
+  - ipywidgets
+  - jupyter_contrib_nbextensions
+  - glpk
+  - matplotlib
+  - tqdm
+  - pip:
+    - otoole==0.10.0b0
+
