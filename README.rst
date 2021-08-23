@@ -4,12 +4,12 @@ MJ2383
 Lab 1:
 
 .. image:: https://mybinder.org/badge_logo.svg
- :target: https://mybinder.org/v2/gh/KTH-dESA/MJ2383/main?filepath=MJ2383%20Computer%20Lab%201.ipynb
+ :target: https://mybinder.org/v2/gh/KTH-dESA/MJ2383/main?filepath=MJ2383_Lab_1.ipynb
 
 Lab 3:
 
 .. image:: https://mybinder.org/badge_logo.svg
- :target: https://mybinder.org/v2/gh/KTH-dESA/MJ2383/main?filepath=mj2383_lab3.ipynb
+ :target: https://mybinder.org/v2/gh/KTH-dESA/MJ2383/main?filepath=MJ2383_Lab_3.ipynb
 
 Developing with Jupyter Notebooks
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
