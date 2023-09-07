@@ -3,12 +3,12 @@ channels:
   - conda-forge
 dependencies:
   - python
+  - notebook
   - numpy
   - pip
   - plotly
   - pandas
   - ipywidgets
-  - jupyter_contrib_nbextensions
   - glpk
   - matplotlib
   - tqdm
