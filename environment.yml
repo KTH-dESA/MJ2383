@@ -1,4 +1,4 @@
-name: osemosys
+name: mj2383
 channels:
   - conda-forge
 dependencies:
@@ -13,5 +13,5 @@ dependencies:
   - matplotlib
   - tqdm
   - pip:
-    - otoole==0.10.0b0
+    - otoole
 
